@@ -7,6 +7,7 @@ const GALLERY_DATA = {
     "_DSC2059-2.jpg",
     "_DSC2073-2.jpg",
     "_DSC2084-1.jpg",
+    "_DSC6990.jpg",
     "_DSC7030.jpg",
     "_DSC7038-1.jpg",
     "_DSC7172.jpg",
