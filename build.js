@@ -43,4 +43,12 @@ const GALLERY_DATA = ${JSON.stringify(data, null, 2)};
 `;
 
 fs.writeFileSync(path.join(__dirname, 'gallery-data.js'), output, 'utf8');
-console.log('\n✦  gallery-data.js written. Commit this file along with your images.\n');
+
+// Cache-bust index.html so returning visitors always load fresh gallery data
+const htmlPath = path.join(__dirname, 'index.html');
+let html = fs.readFileSync(htmlPath, 'utf8');
+const version = Date.now();
+html = html.replace(/src="gallery-data\.js(\?v=\d+)?"/, `src="gallery-data.js?v=${version}"`);
+fs.writeFileSync(htmlPath, html, 'utf8');
+
+console.log(`\n✦  gallery-data.js written.\n✦  index.html cache-busted with ?v=${version}\n`);
