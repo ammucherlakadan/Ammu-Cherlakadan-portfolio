@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ammu Cherlakadan — Photographer, Mysore</title>
+  <meta name="description" content="Ammu Cherlakadan is a photographer based in Mysore. Specialising in food & product, fashion lookbooks, and events. Beauty isn't staged — it's found." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────── -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo">Ammu Cherlakadan</a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Investment</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile overlay menu -->
+  <div class="nav-overlay" id="navOverlay" role="dialog" aria-label="Navigation menu">
+    <a href="#portfolio" class="overlay-link">Work</a>
+    <a href="#about"     class="overlay-link">About</a>
+    <a href="#services"  class="overlay-link">Investment</a>
+    <a href="#contact"   class="overlay-link">Contact</a>
+  </div>
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section class="hero" id="hero" aria-label="Introduction">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-location">Mysore &nbsp;·&nbsp; Est. 2019</p>
+      <h1 class="hero-name">Ammu<br>Cherlakadan</h1>
+      <p class="hero-tagline">"Beauty isn't staged — it's found."</p>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── Portfolio ────────────────────────────────────────── -->
+  <section class="portfolio" id="portfolio" aria-label="Portfolio">
+    <span class="section-label reveal">Work</span>
+
+    <div class="portfolio-tabs" role="tablist" aria-label="Portfolio categories">
+      <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="table"    aria-controls="panel-table">The Table</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" data-tab="lookbook" aria-controls="panel-lookbook">The Lookbook</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" data-tab="brand"    aria-controls="panel-brand">The Brand</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" data-tab="occasion" aria-controls="panel-occasion">The Occasion</button>
+    </div>
+
+    <!-- Panels populated dynamically from gallery.js -->
+    <div class="tab-panel active" id="panel-table"    role="tabpanel"><div class="masonry"></div></div>
+    <div class="tab-panel"        id="panel-lookbook" role="tabpanel"><div class="masonry"></div></div>
+    <div class="tab-panel"        id="panel-brand"    role="tabpanel"><div class="masonry"></div></div>
+    <div class="tab-panel"        id="panel-occasion" role="tabpanel"><div class="masonry"></div></div>
+  </section>
+
+  <hr class="thin-rule" aria-hidden="true" />
+
+  <!-- ── About ─────────────────────────────────────────────── -->
+  <section class="about" id="about" aria-label="About Ammu">
+    <div class="about-image reveal">
+      <img
+        src="images/Me/_DSC7720-Enhanced-NR-1.jpg"
+        alt="Ammu Cherlakadan, photographer based in Mysore"
+      />
+    </div>
+
+    <div class="about-text reveal">
+      <span class="section-label" style="text-align:left; margin-bottom:1.5rem;">About</span>
+
+      <p class="about-opening">
+        "Six years ago, I picked up a camera not to capture the world —<br>
+        but to understand it."
+      </p>
+
+      <p class="about-body">
+        Six years behind the lens has taught me that beauty isn't staged — it's found.
+        Based in the heart of Mysore, my work is a tribute to simplicity: the quiet emotion
+        in a hand-woven fabric, the honest steam rising from a morning brew. I believe every
+        product has a pulse, every person carries a story that deserves to be told without
+        pretence.
+      </p>
+      <p class="about-body">
+        I don't just photograph — I collaborate. With local makers, small businesses, and
+        visionaries who care deeply about what they create. Together, we turn their craft
+        into something that lasts far longer than a trend.
+      </p>
+
+      <span class="about-closing">Let's meet over coffee. Let's make something real.</span>
+    </div>
+  </section>
+
+  <hr class="thin-rule" aria-hidden="true" />
+
+  <!-- ── Services & Investment ─────────────────────────────── -->
+  <section class="services" id="services" aria-label="Services and pricing">
+    <span class="section-label reveal">Investment</span>
+
+    <p class="services-intro reveal">
+      Every session is a conversation.<br>These are the ways we can begin.
+    </p>
+
+    <div class="services-grid">
+
+      <!-- Card 1: The Product & Table -->
+      <div class="service-card reveal">
+        <h3 class="service-card-name">The Product<br>&amp; Table</h3>
+        <p class="service-card-desc">
+          Visualizing the soul of your craft.<br>
+          Ideal for boutique cafes and product creators.
+        </p>
+
+        <div class="service-tier">
+          <p class="service-tier-name">The Foundational Set</p>
+          <p class="service-tier-price">₹5,000</p>
+          <ul class="service-tier-detail">
+            <li>Focus: Dynamic storytelling</li>
+            <li>2 Cinematic Reels <em>or</em> 1 Reel + 3 Soulful Product Portraits</li>
+          </ul>
+        </div>
+
+        <div class="service-tier">
+          <p class="service-tier-name">The Curated Duo</p>
+          <p class="service-tier-price">₹7,000</p>
+          <ul class="service-tier-detail">
+            <li>Focus: A balanced narrative for your feed</li>
+            <li>2 Cinematic Reels + 2 Soulful Product Portraits</li>
+            <li>Collaborative styling &amp; unique edits</li>
+          </ul>
+        </div>
+
+        <div class="service-tier">
+          <p class="service-tier-name">The Narrative Flow</p>
+          <p class="service-tier-price">₹10,000</p>
+          <ul class="service-tier-detail">
+            <li>Focus: Complete visual storytelling</li>
+            <li>4 Comprehensive Reels — raw shoot to artistic edit</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2: The Lookbook -->
+      <div class="service-card reveal">
+        <h3 class="service-card-name">The Lookbook</h3>
+        <p class="service-card-desc">
+          Designed for Mysore's local designers.<br>
+          Quick, high-quality, and deeply human.
+        </p>
+
+        <div class="service-tier">
+          <p class="service-tier-name">The Signature Session</p>
+          <p class="service-tier-price">From ₹8,000</p>
+          <ul class="service-tier-detail">
+            <li>High-end, candid fashion photography</li>
+            <li>Captures the movement and emotion of your designs</li>
+            <li>Ammu's signature unique edits on every selected frame</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3: The Occasion -->
+      <div class="service-card reveal">
+        <h3 class="service-card-name">The Occasion</h3>
+        <p class="service-card-desc">
+          Capturing the unposed energy<br>of your gathering.
+        </p>
+
+        <div class="service-tier">
+          <p class="service-tier-name">Bespoke Coverage</p>
+          <p class="service-tier-price" style="color: var(--sage); font-size: 1.1rem; font-style: italic;">Pricing on Request</p>
+          <ul class="service-tier-detail">
+            <li>Every event has its own rhythm</li>
+            <li>Let's meet over coffee to discuss the scale and spirit of your occasion</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Contact / Footer ──────────────────────────────────── -->
+  <section class="contact" id="contact" aria-label="Contact">
+    <h2 class="contact-heading reveal">
+      Let's talk<br>over coffee.
+    </h2>
+
+    <a
+      class="contact-instagram reveal"
+      href="https://www.instagram.com/ammu_cherlakadan"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Ammu Cherlakadan on Instagram"
+    >
+      <!-- Instagram icon -->
+      <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
+      </svg>
+      @ammu_cherlakadan
+    </a>
+
+    <span class="contact-location reveal">Based in Mysore, Karnataka</span>
+
+    <p class="footer-copy">&copy; 2026 Ammu Cherlakadan. All rights reserved.</p>
+  </section>
+
+  <script src="gallery-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
