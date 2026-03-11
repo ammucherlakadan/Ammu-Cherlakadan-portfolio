@@ -351,6 +351,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   position: relative;
   cursor: zoom-in;
+  min-height: 200px;
   background: linear-gradient(90deg, #ede5d8 0%, #f7f0e6 50%, #ede5d8 100%);
   background-size: 200% 100%;
   animation: shimmer 1.6s ease-in-out infinite;
@@ -368,6 +369,7 @@ a { color: inherit; text-decoration: none; }
 
 .masonry-item img {
   width: 100%;
+  height: auto;
   display: block;
   filter: sepia(0.10) brightness(0.97);
   opacity: 0;
@@ -401,9 +403,8 @@ a { color: inherit; text-decoration: none; }
 
 .about-image img {
   width: 100%;
-  height: clamp(450px, 65vh, 680px);
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  display: block;
   filter: sepia(0.08) brightness(0.98) contrast(1.02);
 }
 
@@ -634,6 +635,8 @@ a { color: inherit; text-decoration: none; }
 
   .about-image img {
     height: clamp(300px, 55vw, 480px);
+    object-fit: cover;
+    object-position: center top;
   }
 
   .services-grid {
