@@ -30,6 +30,7 @@ const GALLERY_DATA = {
     "_DSC2115-1.jpg",
     "_DSC7401.jpg",
     "_DSC7476.jpg",
+    "_DSC7749.jpg",
     "_DSC8544-1.jpg",
     "_DSC8614.jpg",
     "_DSC9221.jpg",
@@ -40,6 +41,7 @@ const GALLERY_DATA = {
   "occasion": [
     "_DSC0126.jpg",
     "_DSC0149.jpg",
+    "_DSC0198.jpg",
     "_DSC0596.jpg",
     "_DSC9440.jpg",
     "_DSC9457.jpg",
