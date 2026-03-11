@@ -3,12 +3,13 @@
  * build.js — Scans image folders and writes gallery-data.js
  * Run after adding or removing images:   node build.js
  *
- * The generated gallery-data.js is committed to git so GitHub Pages
- * can serve the full portfolio with zero server-side code.
+ * Stores image dimensions so browsers reserve exact space before
+ * downloading — eliminates layout jerk on first load.
  */
 
-const fs   = require('fs');
-const path = require('path');
+const fs            = require('fs');
+const path          = require('path');
+const { execSync }  = require('child_process');
 
 const TAB_FOLDERS = {
   table:    'images/The Table',
@@ -18,6 +19,22 @@ const TAB_FOLDERS = {
 };
 
 const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.JPG', '.JPEG', '.png', '.PNG', '.webp', '.WEBP']);
+
+// Read pixel dimensions — tries sips (macOS) then identify (Linux/GitHub Actions)
+function getDims(filePath) {
+  try {
+    const out = execSync(`sips -g pixelWidth -g pixelHeight "${filePath}"`, { stdio: 'pipe' }).toString();
+    const w = parseInt(out.match(/pixelWidth:\s*(\d+)/)?.[1]);
+    const h = parseInt(out.match(/pixelHeight:\s*(\d+)/)?.[1]);
+    if (w && h) return { w, h };
+  } catch {}
+  try {
+    const out = execSync(`identify -format "%wx%h" "${filePath}"`, { stdio: 'pipe' }).toString();
+    const [w, h] = out.trim().split('x').map(Number);
+    if (w && h) return { w, h };
+  } catch {}
+  return null;
+}
 
 console.log('\nScanning image folders...\n');
 
@@ -29,7 +46,12 @@ for (const [key, folder] of Object.entries(TAB_FOLDERS)) {
     const files = fs.readdirSync(folderPath)
       .filter(f => IMAGE_EXTS.has(path.extname(f)))
       .sort((a, b) => a.localeCompare(b));
-    data[key] = files;
+
+    data[key] = files.map(file => {
+      const dims = getDims(path.join(folderPath, file));
+      return dims ? { file, ...dims } : { file };
+    });
+
     console.log(`  ${key.padEnd(12)} ${String(files.length).padStart(2)} images   ← ${folder}`);
   } catch (e) {
     console.warn(`  ⚠  Could not read ${folder}: ${e.message}`);

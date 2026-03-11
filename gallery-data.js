@@ -2,53 +2,221 @@
 // To update: add/remove images from the folders, then run:  node build.js
 const GALLERY_DATA = {
   "table": [
-    "_DSC1970-1.jpg",
-    "_DSC2003.jpg",
-    "_DSC2059-2.jpg",
-    "_DSC2073-2.jpg",
-    "_DSC2084-1.jpg",
-    "_DSC6990.jpg",
-    "_DSC7030.jpg",
-    "_DSC7038-1.jpg",
-    "_DSC7172.jpg",
-    "_DSC7208.jpg",
-    "_DSC7229.jpg"
+    {
+      "file": "_DSC1970-1.jpg",
+      "w": 2048,
+      "h": 1365
+    },
+    {
+      "file": "_DSC2003.jpg",
+      "w": 2048,
+      "h": 1365
+    },
+    {
+      "file": "_DSC2059-2.jpg",
+      "w": 2048,
+      "h": 1365
+    },
+    {
+      "file": "_DSC2073-2.jpg",
+      "w": 2048,
+      "h": 1365
+    },
+    {
+      "file": "_DSC2084-1.jpg",
+      "w": 2048,
+      "h": 1365
+    },
+    {
+      "file": "_DSC6990.jpg",
+      "w": 4000,
+      "h": 6000
+    },
+    {
+      "file": "_DSC7030.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC7038-1.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC7172.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC7208.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC7229.jpg",
+      "w": 1365,
+      "h": 2048
+    }
   ],
   "lookbook": [
-    "_DSC9576.jpg",
-    "_DSC9814[1]-final.jpg",
-    "DSC00305.jpg",
-    "DSC01861-Enhanced-NR.jpg",
-    "DSC02368.jpg",
-    "DSC02612-Enhanced-NR.jpg",
-    "DSC07581.jpg",
-    "DSC07788-1.jpg",
-    "DSC07949-1.jpg",
-    "DSC08515.jpg",
-    "DSC08526.jpg"
+    {
+      "file": "_DSC9576.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC9814[1]-final.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "DSC00305.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "DSC01861-Enhanced-NR.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "DSC02368.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "DSC02612-Enhanced-NR.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "DSC07581.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "DSC07788-1.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "DSC07949-1.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "DSC08515.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "DSC08526.jpg",
+      "w": 1365,
+      "h": 2048
+    }
   ],
   "brand": [
-    "_DSC2115-1.jpg",
-    "_DSC7401.jpg",
-    "_DSC7476.jpg",
-    "_DSC7749.jpg",
-    "_DSC8544-1.jpg",
-    "_DSC8614.jpg",
-    "_DSC9221.jpg",
-    "_DSC9539.jpg",
-    "DSC06762-Enhanced-NR-1.jpg",
-    "DSC06806.jpg"
+    {
+      "file": "_DSC2115-1.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC7401.jpg",
+      "w": 2048,
+      "h": 1441
+    },
+    {
+      "file": "_DSC7476.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC7749.jpg",
+      "w": 4000,
+      "h": 6000
+    },
+    {
+      "file": "_DSC8544-1.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC8614.jpg",
+      "w": 2048,
+      "h": 1365
+    },
+    {
+      "file": "_DSC9221.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC9539.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "DSC06762-Enhanced-NR-1.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "DSC06806.jpg",
+      "w": 1382,
+      "h": 2048
+    }
   ],
   "occasion": [
-    "_DSC0126.jpg",
-    "_DSC0149.jpg",
-    "_DSC0198.jpg",
-    "_DSC0596.jpg",
-    "_DSC9440.jpg",
-    "_DSC9457.jpg",
-    "_DSC9552.jpg",
-    "_DSC9559.jpg",
-    "_DSC9645.jpg",
-    "_DSC9957-1.jpg"
+    {
+      "file": "_DSC0126.jpg",
+      "w": 2048,
+      "h": 1365
+    },
+    {
+      "file": "_DSC0149.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC0198.jpg",
+      "w": 6000,
+      "h": 4000
+    },
+    {
+      "file": "_DSC0596.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC9440.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC9457.jpg",
+      "w": 2048,
+      "h": 1365
+    },
+    {
+      "file": "_DSC9552.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC9559.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC9645.jpg",
+      "w": 1365,
+      "h": 2048
+    },
+    {
+      "file": "_DSC9957-1.jpg",
+      "w": 1269,
+      "h": 2048
+    }
   ]
 };

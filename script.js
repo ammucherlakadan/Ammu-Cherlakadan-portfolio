@@ -74,13 +74,15 @@ function buildMasonry(tabKey, masonryEl) {
   const files = (typeof GALLERY_DATA !== 'undefined' && GALLERY_DATA[tabKey]) || [];
 
   const fragment = document.createDocumentFragment();
-  files.forEach(filename => {
+  files.forEach(entry => {
+    const filename = entry.file ?? entry;   // supports both {file,w,h} and plain string
     const item = document.createElement('div');
     item.className = 'masonry-item';
     const img = document.createElement('img');
     img.src     = `${config.folder}/${filename}`;
     img.alt     = config.alt;
     img.loading = 'lazy';
+    if (entry.w && entry.h) { img.style.aspectRatio = `${entry.w} / ${entry.h}`; }
     img.onload  = img.onerror = () => item.classList.add('loaded');
     item.appendChild(img);
     fragment.appendChild(item);
