@@ -1,7 +1,6 @@
 # Allow search engines to index the site but not the images
 User-agent: *
 Allow: /
-Disallow: /images/
 
 # Block Google's image crawler entirely
 User-agent: Googlebot-Image
