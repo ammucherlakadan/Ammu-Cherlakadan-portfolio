@@ -81,6 +81,7 @@ function buildMasonry(tabKey, masonryEl) {
     img.src     = `${config.folder}/${filename}`;
     img.alt     = config.alt;
     img.loading = 'lazy';
+    img.onload  = img.onerror = () => item.classList.add('loaded');
     item.appendChild(img);
     fragment.appendChild(item);
   });
