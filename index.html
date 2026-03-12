@@ -57,16 +57,16 @@
 
     <div class="portfolio-tabs" role="tablist" aria-label="Portfolio categories">
       <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="table"    aria-controls="panel-table">The Table</button>
-      <button class="tab-btn"        role="tab" aria-selected="false" data-tab="lookbook" aria-controls="panel-lookbook">The Lookbook</button>
       <button class="tab-btn"        role="tab" aria-selected="false" data-tab="brand"    aria-controls="panel-brand">The Brand</button>
       <button class="tab-btn"        role="tab" aria-selected="false" data-tab="occasion" aria-controls="panel-occasion">The Occasion</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" data-tab="lookbook" aria-controls="panel-lookbook">The Lookbook</button>
     </div>
 
     <!-- Panels populated dynamically from gallery.js -->
     <div class="tab-panel active" id="panel-table"    role="tabpanel"><div class="masonry"></div></div>
-    <div class="tab-panel"        id="panel-lookbook" role="tabpanel"><div class="masonry"></div></div>
     <div class="tab-panel"        id="panel-brand"    role="tabpanel"><div class="masonry"></div></div>
     <div class="tab-panel"        id="panel-occasion" role="tabpanel"><div class="masonry"></div></div>
+    <div class="tab-panel"        id="panel-lookbook" role="tabpanel"><div class="masonry"></div></div>
   </section>
 
   <hr class="thin-rule" aria-hidden="true" />
@@ -117,7 +117,66 @@
 
     <div class="services-grid">
 
-      <!-- Featured: Product Photography & Content Creation -->
+      <!-- 1. The Lookbook -->
+      <div class="service-featured reveal">
+
+        <div class="service-featured-header">
+          <h3 class="service-card-name">The Lookbook</h3>
+          <p class="service-card-desc">
+            Designed for Mysore's local designers.<br>
+            Quick, high-quality, and deeply human.
+          </p>
+        </div>
+
+        <div class="package-categories">
+
+          <div class="package-category package-category--solo">
+            <p class="package-category-label">Basic Model Shoot</p>
+            <p class="package-price">₹8,000</p>
+            <ul class="package-features">
+              <li>7 edited photos</li>
+            </ul>
+          </div>
+
+          <div class="package-category package-category--solo">
+            <p class="package-category-label">Standard Model Shoot</p>
+            <p class="package-price">₹16,000</p>
+            <ul class="package-features">
+              <li>14 edited photos</li>
+            </ul>
+          </div>
+
+          <div class="package-category package-category--solo">
+            <p class="package-category-label">Premium Model Shoot</p>
+            <p class="package-price">₹24,000</p>
+            <ul class="package-features">
+              <li>21 edited photos</li>
+            </ul>
+          </div>
+
+        </div><!-- /.package-categories -->
+
+        <!-- Includes -->
+        <div class="addons-section">
+          <p class="package-category-label">Includes</p>
+          <div class="addons-row">
+            <span class="addon-item">Professionally edited images</span>
+            <span class="addon-item">Extra Edited Photo &mdash; <strong>₹1,200</strong></span>
+            <span class="addon-item">1 revision included per image</span>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <ul class="pricing-notes">
+          <li>Raw files are not delivered</li>
+          <li>Studio rental, makeup artist, stylist, or special props charged separately</li>
+          <li>Travel within city included &mdash; outside city charged separately</li>
+          <li>Selected images may be used for portfolio purposes (Instagram, website, or promotional material) if the work turns out well</li>
+        </ul>
+
+      </div><!-- /.service-featured -->
+
+      <!-- 2. Product Photography & Content Creation -->
       <div class="service-featured reveal">
 
         <div class="service-featured-header">
@@ -130,92 +189,61 @@
 
         <div class="package-categories">
 
-          <!-- Column 1: Photos Only -->
-          <div class="package-category">
-            <p class="package-category-label">Photos Only</p>
-
-            <div class="package-card">
-              <p class="package-name">The Essentials</p>
-              <p class="package-price">₹5,000</p>
-              <ul class="package-features">
-                <li>7 fully edited product photos</li>
-                <li>Professional color grading</li>
-                <li>Basic prop styling</li>
-              </ul>
-            </div>
+          <div class="package-category package-category--solo">
+            <p class="package-category-label">Essential Shoot</p>
+            <p class="package-price">₹5,000</p>
+            <ul class="package-features">
+              <li>7 fully edited photos</li>
+            </ul>
           </div>
 
-          <!-- Column 2: Photo + Reel Packages -->
-          <div class="package-category">
-            <p class="package-category-label">Photo + Reel Packages</p>
-
-            <div class="package-card">
-              <p class="package-name">Starter Content</p>
-              <p class="package-price">₹6,500</p>
-              <ul class="package-features">
-                <li>1 Edited Reel (15–20 sec)</li>
-                <li>5 Edited Photos</li>
-              </ul>
-            </div>
-
-            <div class="package-card">
-              <p class="package-name">Brand Booster</p>
-              <p class="package-price">₹9,500</p>
-              <ul class="package-features">
-                <li>2 Edited Reels</li>
-                <li>8 Edited Photos</li>
-              </ul>
-            </div>
-
-            <div class="package-card">
-              <p class="package-name">Content Bank</p>
-              <p class="package-price">₹16,000</p>
-              <ul class="package-features">
-                <li>4 Edited Reels</li>
-                <li>12 Edited Photos</li>
-              </ul>
-              <p class="package-note">Best suited for monthly brand content.</p>
-            </div>
+          <div class="package-category package-category--solo">
+            <p class="package-category-label">Brand Shoot</p>
+            <p class="package-price">₹10,000</p>
+            <ul class="package-features">
+              <li>14 fully edited photos</li>
+            </ul>
           </div>
 
-          <!-- Column 3: Reels Only -->
-          <div class="package-category">
-            <p class="package-category-label">Reels Only</p>
-
-            <div class="package-card">
-              <p class="package-name">Reel Duo</p>
-              <p class="package-price">₹6,500</p>
-              <ul class="package-features">
-                <li>2 Edited Reels (15–20 sec)</li>
-              </ul>
-            </div>
-
-            <div class="package-card">
-              <p class="package-name">Reel Trio</p>
-              <p class="package-price">₹9,000</p>
-              <ul class="package-features">
-                <li>3 Edited Reels</li>
-              </ul>
-            </div>
-
-            <div class="package-card">
-              <p class="package-name">Reel Pack</p>
-              <p class="package-price">₹14,000</p>
-              <ul class="package-features">
-                <li>5 Edited Reels</li>
-              </ul>
-            </div>
+          <div class="package-category package-category--solo">
+            <p class="package-category-label">Lookbook Shoot</p>
+            <p class="package-price">₹15,000</p>
+            <ul class="package-features">
+              <li>21 fully edited photos</li>
+            </ul>
           </div>
 
         </div><!-- /.package-categories -->
+
+        <!-- Reels -->
+        <div class="reels-section">
+          <p class="package-category-label">Reels <span class="reels-note">Simple brand reels for social media, not cinematic production.</span></p>
+          <div class="reels-row">
+            <div class="reel-item">
+              <span class="reel-count">1 Reel</span>
+              <span class="reel-price">₹2,500</span>
+            </div>
+            <div class="reel-item">
+              <span class="reel-count">2 Reels</span>
+              <span class="reel-price">₹5,000</span>
+            </div>
+            <div class="reel-item">
+              <span class="reel-count">3 Reels</span>
+              <span class="reel-price">₹7,500</span>
+            </div>
+            <div class="reel-item">
+              <span class="reel-count">4 Reels</span>
+              <span class="reel-price">₹10,000</span>
+            </div>
+          </div>
+        </div>
 
         <!-- Add-Ons -->
         <div class="addons-section">
           <p class="package-category-label">Add-Ons</p>
           <div class="addons-row">
             <span class="addon-item">Extra Edited Photo &mdash; <strong>₹750</strong></span>
-            <span class="addon-item">Extra Reel &mdash; <strong>₹3,000</strong></span>
-            <span class="addon-item">Extra Product &mdash; <strong>₹600</strong></span>
+            <span class="addon-item">Extra Reel &mdash; <strong>₹2,500</strong></span>
             <span class="addon-item">Rush Delivery (48 hrs) &mdash; <strong>₹1,500</strong></span>
             <span class="addon-item">Additional Revision &mdash; <strong>₹500</strong></span>
           </div>
@@ -225,55 +253,39 @@
         <ul class="pricing-notes">
           <li>All photos and reels are professionally edited</li>
           <li>Raw files are not delivered</li>
-          <li>1 revision included per photo/reel</li>
-          <li>Basic styling included</li>
-          <li>Studio rental, special props, models &amp; location permits charged separately</li>
-          <li>Travel within Mysore city included — outside city travel charged separately</li>
+          <li>1 revision included per deliverable</li>
+          <li>Studio rental, props, models, or special setups charged separately</li>
+          <li>Travel within city included &mdash; outside city charged separately</li>
           <li>Pricing includes social media usage rights</li>
+          <li>Selected images or videos may be used for portfolio purposes (Instagram, website, or promotional material) if the work turns out well</li>
         </ul>
 
       </div><!-- /.service-featured -->
 
-      <!-- Secondary cards -->
-      <div class="services-secondary">
+      <!-- 3. The Occasion -->
+      <div class="service-featured reveal">
 
-        <!-- The Lookbook -->
-        <div class="service-card reveal">
-          <h3 class="service-card-name">The Lookbook</h3>
-          <p class="service-card-desc">
-            Designed for Mysore's local designers.<br>
-            Quick, high-quality, and deeply human.
-          </p>
-
-          <div class="service-tier">
-            <p class="service-tier-name">The Signature Session</p>
-            <p class="service-tier-price">From ₹8,000</p>
-            <ul class="service-tier-detail">
-              <li>High-end, candid fashion photography</li>
-              <li>Captures the movement and emotion of your designs</li>
-              <li>Ammu's signature unique edits on every selected frame</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- The Occasion -->
-        <div class="service-card reveal">
+        <div class="service-featured-header">
           <h3 class="service-card-name">The Occasion</h3>
           <p class="service-card-desc">
             Capturing the unposed energy<br>of your gathering.
           </p>
+        </div>
 
-          <div class="service-tier">
-            <p class="service-tier-name">Bespoke Coverage</p>
-            <p class="service-tier-price" style="color: var(--sage); font-size: 1.1rem; font-style: italic;">Pricing on Request</p>
-            <ul class="service-tier-detail">
+        <div class="package-categories package-categories--single">
+
+          <div class="package-category package-category--solo">
+            <p class="package-category-label">Bespoke Coverage</p>
+            <p class="package-price package-price--on-request">Pricing on Request</p>
+            <ul class="package-features">
               <li>Every event has its own rhythm</li>
               <li>Let's meet over coffee to discuss the scale and spirit of your occasion</li>
             </ul>
           </div>
-        </div>
 
-      </div><!-- /.services-secondary -->
+        </div><!-- /.package-categories -->
+
+      </div><!-- /.service-featured -->
 
     </div>
   </section>
