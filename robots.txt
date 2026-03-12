@@ -1,7 +1,13 @@
-# ── Site indexing: allowed ────────────────────────────────────
+# ── Site indexing: allowed, images: not indexed or previewed ──
 User-agent: *
 Allow: /
 Disallow: /images/
+
+# Explicitly suppress image indexing and previews for Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /images/
+X-Robots-Tag: noimageindex, max-image-preview:none
 
 # ── Block all major image crawlers from images ────────────────
 User-agent: Googlebot-Image

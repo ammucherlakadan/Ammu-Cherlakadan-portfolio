@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ammu Cherlakadan — Photographer, Mysore</title>
-  <meta name="description" content="Ammu Cherlakadan is a photographer based in Mysore. Specialising in food & product, fashion lookbooks, and events. Beauty isn't staged — it's found." />
-  <meta name="robots" content="index, follow, noimageindex" />
+  <meta name="description" content="Ammu Cherlakadan is a photographer based in Mysore, Karnataka. Specialising in product & food photography, fashion lookbooks, brand photography, and event coverage — since 2019." />
+  <meta name="keywords" content="photographer in Mysore, Mysore photographer, product photographer Mysore, food photographer Mysore, fashion photographer Karnataka, brand photography Mysore, lookbook photographer, event photographer Mysore, commercial photographer Karnataka, Ammu Cherlakadan" />
+  <meta name="robots" content="index, follow, noimageindex, max-image-preview:none" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/" />
@@ -44,35 +45,132 @@
   <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'" />
 
   <!-- Open Graph: control exactly what appears when page is shared -->
+  <!-- No og:image — prevents portfolio photos appearing on social shares -->
   <meta property="og:title" content="Ammu Cherlakadan — Photographer, Mysore" />
-  <meta property="og:description" content="Photographer based in Mysore. Specialising in product, fashion lookbooks, and events. Beauty isn't staged — it's found." />
+  <meta property="og:description" content="Photographer based in Mysore, Karnataka. Specialising in product &amp; food photography, fashion lookbooks, brand photography, and event coverage." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/" />
-  <meta property="og:image" content="https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/images/Me/_DSC7720-Enhanced-NR-1.jpg" />
-  <meta property="og:image:alt" content="Ammu Cherlakadan, photographer based in Mysore" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="Ammu Cherlakadan Photography" />
 
-  <!-- Twitter/X card -->
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Twitter/X card: summary (no image) so no photos appear outside the site -->
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Ammu Cherlakadan — Photographer, Mysore" />
-  <meta name="twitter:description" content="Photographer based in Mysore. Specialising in product, fashion lookbooks, and events." />
-  <meta name="twitter:image" content="https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/images/Me/_DSC7720-Enhanced-NR-1.jpg" />
+  <meta name="twitter:description" content="Photographer based in Mysore, Karnataka. Specialising in product, fashion, brand, and event photography." />
 
-  <!-- JSON-LD: register copyright ownership with search engines -->
+  <!-- JSON-LD: structured data for search engine understanding & copyright -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ammu Cherlakadan",
-    "jobTitle": "Photographer",
-    "url": "https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/",
-    "sameAs": ["https://www.instagram.com/ammu_cherlakadan"],
-    "description": "Photographer based in Mysore specialising in product, fashion and brand photography.",
-    "knowsAbout": ["Product Photography", "Fashion Photography", "Brand Photography", "Food Photography"],
-    "copyrightHolder": {
-      "@type": "Person",
-      "name": "Ammu Cherlakadan"
-    },
-    "license": "All rights reserved. No reproduction, distribution or use without explicit written permission from Ammu Cherlakadan."
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/#person",
+        "name": "Ammu Cherlakadan",
+        "jobTitle": "Photographer",
+        "description": "Photographer based in Mysore, Karnataka, specialising in product photography, food photography, fashion lookbooks, brand photography, and event photography since 2019.",
+        "url": "https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/",
+        "sameAs": ["https://www.instagram.com/ammu_cherlakadan"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mysore",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        },
+        "knowsAbout": [
+          "Product Photography",
+          "Food Photography",
+          "Fashion Photography",
+          "Brand Photography",
+          "Event Photography",
+          "Lookbook Photography",
+          "Commercial Photography"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/#business",
+        "name": "Ammu Cherlakadan Photography",
+        "description": "Professional photography services in Mysore, Karnataka. Specialising in product & food photography, fashion lookbooks, brand identity shoots, and event coverage.",
+        "url": "https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/",
+        "priceRange": "₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mysore",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 12.2958,
+          "longitude": 76.6394
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Mysore" },
+          { "@type": "State", "name": "Karnataka" }
+        ],
+        "sameAs": ["https://www.instagram.com/ammu_cherlakadan"],
+        "founder": { "@id": "https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/#person" },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Photography Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Product & Food Photography",
+                "description": "Professional product and food photography in Mysore. Essential (7 photos ₹5,000), Brand (14 photos ₹10,000), Lookbook (21 photos ₹15,000)."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Fashion Lookbook Photography",
+                "description": "Fashion and model photography for designers and clothing brands in Mysore. Packages from ₹8,000."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Brand Photography",
+                "description": "Brand identity and commercial photography for businesses in Mysore and Karnataka."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Event Photography",
+                "description": "Event, occasion, and celebration photography in Mysore. Pricing on request."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Brand Reels",
+                "description": "Simple brand reels for social media. 1–4 reels from ₹2,500."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/#website",
+        "url": "https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/",
+        "name": "Ammu Cherlakadan Photography",
+        "description": "Photography portfolio of Ammu Cherlakadan, based in Mysore, Karnataka.",
+        "inLanguage": "en",
+        "author": { "@id": "https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/#person" },
+        "copyrightHolder": { "@id": "https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/#person" },
+        "copyrightYear": "2019",
+        "license": "All rights reserved. No reproduction, distribution, or use without explicit written permission from Ammu Cherlakadan."
+      }
+    ]
   }
   </script>
 
@@ -123,6 +221,7 @@
 
   <!-- ── Portfolio ────────────────────────────────────────── -->
   <section class="portfolio" id="portfolio" aria-label="Portfolio">
+    <h2 class="sr-only">Photography Portfolio — Product, Brand, Fashion &amp; Event Photography in Mysore</h2>
     <span class="section-label reveal">Work</span>
 
     <div class="portfolio-tabs" role="tablist" aria-label="Portfolio categories">
@@ -143,6 +242,7 @@
 
   <!-- ── About ─────────────────────────────────────────────── -->
   <section class="about" id="about" aria-label="About Ammu">
+    <h2 class="sr-only">About Ammu Cherlakadan — Photographer based in Mysore, Karnataka since 2019</h2>
     <div class="about-image reveal">
       <img
         src="images/Me/_DSC7720-Enhanced-NR-1.jpg"
@@ -180,6 +280,7 @@
 
   <!-- ── Services & Investment ─────────────────────────────── -->
   <section class="services" id="services" aria-label="Services and pricing">
+    <h2 class="sr-only">Photography Services &amp; Pricing — Product, Lookbook, Brand &amp; Event Photography in Mysore</h2>
     <span class="section-label reveal">Investment</span>
 
     <p class="services-intro reveal">
