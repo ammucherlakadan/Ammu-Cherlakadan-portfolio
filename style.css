@@ -2,7 +2,7 @@
    Ammu Cherlakadan — Photography Portfolio
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+/* Fonts loaded via <link> in HTML for faster loading — no @import needed */
 
 /* ── Variables ────────────────────────────────────────────── */
 :root {
@@ -981,4 +981,88 @@ img {
     font-size: 1rem;
     color: #6B3F2A;
   }
+}
+
+/* ── Lightbox ─────────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(22, 12, 6, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  /* Subtle fade-in when image swaps */
+  transition: opacity 0.18s ease;
+}
+.lightbox-img.loading { opacity: 0; }
+
+/* Close button — top right */
+.lightbox-close {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.4rem;
+  background: none;
+  border: none;
+  color: rgba(244, 237, 224, 0.75);
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  transition: color 0.2s ease;
+  z-index: 10000;
+  font-family: var(--font-sc);
+}
+.lightbox-close:hover { color: var(--cream); }
+
+/* Prev / Next arrows */
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(244, 237, 224, 0.6);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  transition: color 0.2s ease;
+  z-index: 10000;
+  line-height: 1;
+}
+.lightbox-prev { left: 0.5rem; }
+.lightbox-next { right: 0.5rem; }
+.lightbox-prev:hover,
+.lightbox-next:hover { color: var(--cream); }
+
+/* Mobile: slightly smaller arrows, bigger tap target */
+@media (max-width: 600px) {
+  .lightbox-img {
+    max-width: 98vw;
+    max-height: 82vh;
+  }
+  .lightbox-prev { left: 0; padding: 1rem 0.8rem; }
+  .lightbox-next { right: 0; padding: 1rem 0.8rem; }
+  .lightbox-close { top: 0.7rem; right: 0.8rem; font-size: 2rem; }
 }
