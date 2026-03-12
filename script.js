@@ -79,9 +79,10 @@ function buildMasonry(tabKey, masonryEl) {
     const item = document.createElement('div');
     item.className = 'masonry-item';
     const img = document.createElement('img');
-    img.src     = `${config.folder}/${filename}`;
-    img.alt     = config.alt;
-    img.loading = 'lazy';
+    img.src       = `${config.folder}/${filename}`;
+    img.alt       = config.alt;
+    img.loading   = 'lazy';
+    img.draggable = false;
     if (entry.w && entry.h) { img.style.aspectRatio = `${entry.w} / ${entry.h}`; }
     img.onload  = img.onerror = () => item.classList.add('loaded');
     item.appendChild(img);
@@ -142,6 +143,36 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealEls.forEach(el => revealObserver.observe(el));
+
+// ── Image Protection ──────────────────────────────────────────
+
+// Block right-click / long-press context menu on images & portfolio areas
+document.addEventListener('contextmenu', function(e) {
+  if (
+    e.target.tagName === 'IMG' ||
+    e.target.closest('.masonry-item, .masonry, .about-image, .hero-bg')
+  ) {
+    e.preventDefault();
+    return false;
+  }
+});
+
+// Block drag-to-desktop on images
+document.addEventListener('dragstart', function(e) {
+  if (e.target.tagName === 'IMG') {
+    e.preventDefault();
+    return false;
+  }
+});
+
+// Block Ctrl/Cmd+S (save page), Ctrl/Cmd+U (view source), Ctrl/Cmd+P (print)
+document.addEventListener('keydown', function(e) {
+  const key = e.key.toLowerCase();
+  if ((e.ctrlKey || e.metaKey) && ['s', 'u', 'p'].includes(key)) {
+    e.preventDefault();
+    return false;
+  }
+});
 
 // ── Smooth nav link scrolling (offset for fixed nav) ─────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

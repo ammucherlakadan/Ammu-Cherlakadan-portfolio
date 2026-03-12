@@ -1,7 +1,66 @@
-# Allow search engines to index the site but not the images
+# ── Site indexing: allowed ────────────────────────────────────
 User-agent: *
 Allow: /
+Disallow: /images/
 
-# Block Google's image crawler entirely
+# ── Block all major image crawlers from images ────────────────
 User-agent: Googlebot-Image
 Disallow: /
+
+User-agent: Bingbot
+Disallow: /images/
+
+User-agent: Slurp
+Disallow: /images/
+
+User-agent: DuckDuckBot
+Disallow: /images/
+
+User-agent: Baiduspider
+Disallow: /images/
+
+User-agent: YandexImages
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /images/
+
+User-agent: Applebot
+Disallow: /images/
+
+User-agent: Pinterestbot
+Disallow: /images/
+
+User-agent: Twitterbot
+Disallow: /images/
+
+User-agent: facebookexternalhit
+Disallow: /images/
+
+User-agent: LinkedInBot
+Disallow: /images/
+
+User-agent: Discordbot
+Disallow: /images/
+
+User-agent: TelegramBot
+Disallow: /images/
+
+# ── Block common scrapers ─────────────────────────────────────
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /images/

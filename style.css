@@ -929,3 +929,56 @@ a { color: inherit; text-decoration: none; }
   /* Hero: on very small portrait phones, push even higher */
   .hero-bg { background-position: center 10%; }
 }
+
+/* ── Image Protection ─────────────────────────────────────── */
+
+/* Prevent drag-to-desktop and text/image selection on all images */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Prevent iOS/Android long-press save dialog */
+  -webkit-touch-callout: none;
+}
+
+/* Block pointer events on portfolio images so clicks/long-presses
+   hit the wrapper div, not the <img> — prevents mobile save dialog
+   and right-click on img element itself */
+.masonry-item img,
+.about-image img {
+  pointer-events: none;
+}
+
+/* Transparent overlay on each masonry card — intercepts any
+   touch or mouse interaction before it reaches the image */
+.masonry-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  cursor: zoom-in;
+}
+
+/* Hide all images when printing */
+@media print {
+  .masonry,
+  .about-image,
+  .hero-bg,
+  .masonry-item {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  body::before {
+    content: 'Images on this portfolio are protected by copyright.';
+    display: block;
+    text-align: center;
+    padding: 3rem;
+    font-style: italic;
+    font-size: 1rem;
+    color: #6B3F2A;
+  }
+}
