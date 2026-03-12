@@ -81,10 +81,15 @@ const lightboxNext = document.getElementById('lightboxNext');
 
 let lbImages = [];   // flat array of { src, alt } for current tab
 let lbIndex  = 0;
+let lbLabel  = '';   // current tab category name
 
-function openLightbox(images, index) {
+const lightboxCounter = document.getElementById('lightboxCounter');
+const lightboxLabel   = document.getElementById('lightboxLabel');
+
+function openLightbox(images, index, label) {
   lbImages = images;
   lbIndex  = index;
+  lbLabel  = label || '';
   showLightboxImage(lbIndex);
   lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -94,6 +99,9 @@ function openLightbox(images, index) {
 function closeLightbox() {
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
+  // Reset pinch zoom
+  lbScale = 1;
+  lightboxImg.style.transform = '';
 }
 
 function showLightboxImage(i) {
@@ -102,6 +110,12 @@ function showLightboxImage(i) {
   lightboxImg.onload = () => lightboxImg.classList.remove('loading');
   lightboxImg.src = entry.src;
   lightboxImg.alt = entry.alt;
+  // Counter + label
+  if (lightboxCounter) lightboxCounter.textContent = `${i + 1} / ${lbImages.length}`;
+  if (lightboxLabel)   lightboxLabel.textContent   = lbLabel;
+  // Reset pinch zoom on image change
+  lbScale = 1;
+  lightboxImg.style.transform = '';
   // Show/hide arrows at ends
   lightboxPrev.style.opacity = i === 0 ? '0.2' : '';
   lightboxPrev.style.pointerEvents = i === 0 ? 'none' : '';
@@ -126,11 +140,42 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight' && lbIndex < lbImages.length - 1) { lbIndex++; showLightboxImage(lbIndex); }
 });
 
-// Touch swipe support for mobile
+// Touch swipe + pinch-to-zoom support for mobile
 let touchStartX = 0;
-lightbox.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+let lbScale     = 1;
+let pinchStartDist = 0;
+let pinchStartScale = 1;
+
+function getTouchDist(touches) {
+  const dx = touches[0].clientX - touches[1].clientX;
+  const dy = touches[0].clientY - touches[1].clientY;
+  return Math.hypot(dx, dy);
+}
+
+lightbox.addEventListener('touchstart', e => {
+  if (e.touches.length === 1) {
+    touchStartX = e.touches[0].clientX;
+  } else if (e.touches.length === 2) {
+    pinchStartDist  = getTouchDist(e.touches);
+    pinchStartScale = lbScale;
+  }
+}, { passive: true });
+
+lightbox.addEventListener('touchmove', e => {
+  if (e.touches.length === 2) {
+    e.preventDefault();   // prevent page zoom while pinching
+    const dist  = getTouchDist(e.touches);
+    const ratio = dist / pinchStartDist;
+    lbScale = Math.min(4, Math.max(1, pinchStartScale * ratio));
+    lightboxImg.style.transform = lbScale > 1 ? `scale(${lbScale})` : '';
+  }
+}, { passive: false });
+
 lightbox.addEventListener('touchend', e => {
+  if (e.touches.length > 0) return;   // still fingers down (multi-touch release)
   const dx = e.changedTouches[0].clientX - touchStartX;
+  // Only swipe when not zoomed in
+  if (lbScale > 1.05) return;
   if (Math.abs(dx) < 40) return;   // ignore tiny taps
   if (dx < 0 && lbIndex < lbImages.length - 1) { lbIndex++; showLightboxImage(lbIndex); }
   if (dx > 0 && lbIndex > 0)                   { lbIndex--; showLightboxImage(lbIndex); }
@@ -146,6 +191,10 @@ function buildMasonry(tabKey, masonryEl) {
   if (!config) return;
 
   const files = (typeof GALLERY_DATA !== 'undefined' && GALLERY_DATA[tabKey]) || [];
+
+  // Human-readable label for lightbox meta bar
+  const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabKey}"]`);
+  const tabLabelText = tabBtn ? (tabBtn.textContent.trim().split('\n')[0].trim()) : tabKey;
 
   // Build image list for lightbox
   const tabImageList = files.map(entry => ({
@@ -167,7 +216,7 @@ function buildMasonry(tabKey, masonryEl) {
     if (entry.w && entry.h) { img.style.aspectRatio = `${entry.w} / ${entry.h}`; }
     img.onload  = img.onerror = () => item.classList.add('loaded');
     // Open lightbox on click (via the ::after overlay click on the item div)
-    item.addEventListener('click', () => openLightbox(tabImageList, idx));
+    item.addEventListener('click', () => openLightbox(tabImageList, idx, tabLabelText));
     item.appendChild(img);
     fragment.appendChild(item);
   });
@@ -209,6 +258,34 @@ tabBtns.forEach(btn => {
     });
   });
 });
+
+// ── Tab count badges ──────────────────────────────────────────
+// Appends "· 9" style badge to each tab button from GALLERY_DATA
+if (typeof GALLERY_DATA !== 'undefined') {
+  tabBtns.forEach(btn => {
+    const key   = btn.dataset.tab;
+    const count = GALLERY_DATA[key] && GALLERY_DATA[key].length;
+    if (count) {
+      const badge = document.createElement('span');
+      badge.className = 'tab-count';
+      badge.textContent = count;
+      btn.appendChild(badge);
+    }
+  });
+}
+
+// ── Scroll-to-top button ──────────────────────────────────────
+const scrollTopBtn = document.getElementById('scrollTop');
+
+if (scrollTopBtn) {
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 // ── Scroll reveal ─────────────────────────────────────────────
 const revealEls = document.querySelectorAll('.reveal');

@@ -122,3 +122,6 @@ Disallow: /images/
 
 User-agent: ia_archiver
 Disallow: /images/
+
+# ── Sitemap ───────────────────────────────────────────────────
+Sitemap: https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/sitemap.xml

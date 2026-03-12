@@ -10,6 +10,12 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://ammucherlakadan.github.io/Ammu-Cherlakadan-portfolio/" />
 
+  <!-- Local SEO — helps rank for "photographer in Mysore" searches -->
+  <meta name="geo.region" content="IN-KA" />
+  <meta name="geo.placename" content="Mysore, Karnataka, India" />
+  <meta name="geo.position" content="12.2958;76.6394" />
+  <meta name="ICBM" content="12.2958, 76.6394" />
+
   <!-- Browser chrome colour on mobile -->
   <meta name="theme-color" content="#F4EDE0" />
 
@@ -382,12 +388,19 @@
     <p class="footer-copy">&copy; 2026 Ammu Cherlakadan. All rights reserved.</p>
   </section>
 
+  <!-- Scroll-to-top button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8593;</button>
+
   <!-- Lightbox overlay -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">&times;</button>
     <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#8592;</button>
     <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#8594;</button>
     <img class="lightbox-img" id="lightboxImg" src="" alt="" draggable="false" />
+    <div class="lightbox-meta">
+      <span class="lightbox-label" id="lightboxLabel"></span>
+      <span class="lightbox-counter" id="lightboxCounter"></span>
+    </div>
   </div>
 
   <script src="gallery-data.js?v=1773269561163"></script>

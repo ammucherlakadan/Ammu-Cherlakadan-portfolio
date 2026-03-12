@@ -1056,6 +1056,32 @@ img {
 .lightbox-prev:hover,
 .lightbox-next:hover { color: var(--cream); }
 
+/* Lightbox meta bar — counter + label at bottom */
+.lightbox-meta {
+  position: fixed;
+  bottom: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  z-index: 10000;
+  pointer-events: none;
+}
+.lightbox-label {
+  font-family: var(--font-sc);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  color: rgba(244, 237, 224, 0.5);
+  text-transform: uppercase;
+}
+.lightbox-counter {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-style: italic;
+  color: rgba(244, 237, 224, 0.55);
+}
+
 /* Mobile: slightly smaller arrows, bigger tap target */
 @media (max-width: 600px) {
   .lightbox-img {
@@ -1065,4 +1091,63 @@ img {
   .lightbox-prev { left: 0; padding: 1rem 0.8rem; }
   .lightbox-next { right: 0; padding: 1rem 0.8rem; }
   .lightbox-close { top: 0.7rem; right: 0.8rem; font-size: 2rem; }
+  .lightbox-meta { bottom: 1rem; }
+}
+
+/* ── Tab count badge ─────────────────────────────────────── */
+.tab-count {
+  font-family: var(--font-sc);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--sage);
+  opacity: 0.7;
+  margin-left: 0.4rem;
+}
+
+/* ── Tab panel fade-in on switch ────────────────────────── */
+@keyframes fadeInPanel {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.tab-panel.active {
+  animation: fadeInPanel 0.3s ease;
+}
+
+/* ── Scroll-to-top button ───────────────────────────────── */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.8rem;
+  z-index: 900;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid rgba(138, 154, 123, 0.45);
+  background: rgba(251, 247, 240, 0.9);
+  color: var(--sage);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease, background 0.2s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+.scroll-top:hover {
+  background: var(--cream);
+  color: var(--terracotta);
+  border-color: rgba(193, 125, 82, 0.4);
+}
+@media (max-width: 600px) {
+  .scroll-top { bottom: 1.4rem; right: 1.2rem; width: 2.2rem; height: 2.2rem; }
 }
